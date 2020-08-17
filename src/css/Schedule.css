@@ -1,0 +1,15 @@
+.pageHeader {
+  display: flex;
+  flex-basis: 320px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.pageHeaderInfo {
+  padding-right: 10%;
+  border-bottom: 3px solid gray;
+}
+p {
+  font-size: 12px;
+}
