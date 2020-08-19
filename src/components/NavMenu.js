@@ -36,9 +36,12 @@ const handleSignout=()=>{
           <Nav className="m-auto" navbar style={{justifySelf:"center"}}>
             <NavItem>
               <NavLink to="/">Home</NavLink>
-            </NavItem>         
+            </NavItem>        
             <NavItem>
               <NavLink to="/latest">Latest Shows</NavLink>
+            </NavItem>         
+            <NavItem>
+              <NavLink to="/popular">Popular Shows</NavLink>
             </NavItem>         
           </Nav>
 
@@ -58,7 +61,7 @@ const handleSignout=()=>{
               <NavLink to="/watch">Watched</NavLink>
               </DropdownItem>
               <DropdownItem>
-              <NavLink to="/subcribed">Subscribed</NavLink>
+              <NavLink to="/subscribe">Subscribed</NavLink>
               </DropdownItem>
               <DropdownItem divider />
               <DropdownItem>

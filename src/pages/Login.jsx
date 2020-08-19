@@ -5,7 +5,7 @@ import uiConfig from '../functions/firebaseConfig';
 import { setCurrentUser } from '../redux/actions/authActions';
 import { connect } from 'react-redux';
 import './../css/Login.css'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './../css/Cards.css'
 
 class Login extends Component {
@@ -19,8 +19,6 @@ class Login extends Component {
             })
             this.props.setCurrentUser(firebase.auth().currentUser)
         })
-
-
     }
     render() {
         return this.props.userDetail ?
@@ -50,4 +48,4 @@ class Login extends Component {
 const mapStatesToMatch = (storeState) => {
     return { userDetail: storeState.authState.user }
 }
-export default connect(mapStatesToMatch, { setCurrentUser })(Login)
+export default connect(mapStatesToMatch, { setCurrentUser })(withRouter(Login))

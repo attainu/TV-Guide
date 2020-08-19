@@ -1,5 +1,5 @@
 import Axios from "axios"
-import { FETCH_POPULAR_SHOWS, FETCH_LATEST_SHOWS } from "../actionTypes"
+import { FETCH_POPULAR_SHOWS, FETCH_LATEST_SHOWS, FETCH_SHOW_DETAILS } from "../actionTypes"
 import { api } from "../../functions/config"
 
 export const getPopularShows = () => async (dispatch)=>{
@@ -18,3 +18,13 @@ export const getLatestShows = () => async (dispatch)=>{
             payload: showList
         })
 }
+export const getShowDetails=(showId)=> async (dispatch)=>{
+    const showlist =await Axios (`https://api.themoviedb.org/3/tv/${showId}?api_key=${api.tmdb}&language=en-US&append_to_response=videos%2Ccredits`)
+    
+    dispatch({
+        type: FETCH_SHOW_DETAILS,
+        payload: showlist
+    })
+
+}
+

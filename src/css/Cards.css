@@ -4,9 +4,11 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid red;
-  background-color: black;
-  margin: 20px 0;
+  border: 1px solid rgba(255, 0, 0, 0.258);
+  background-color: rgba(0, 0, 0, 0.707);
+  padding: 50px 0;
+  margin: 50px 0;
+  border-radius: 5px;
 }
 .card {
   flex-basis: 250px;
@@ -15,7 +17,7 @@
   background-position: center;
   background-size: cover;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 3px 2px yellow;
 }
@@ -86,10 +88,31 @@ form .overlay-butt:active {
 }
 
 .card--original_name {
-  color: yellow;
-  mix-blend-mode: exclusion;
-  text-shadow: 2px 2px #ff0000;
+  color: black;
+  text-shadow: 1px 1px red;
   font-weight: 700;
+  mix-blend-mode: multiply;
+  font-size: x-large;
+  background-color: yellow;
+  text-align: center;
+  width: 100%;
+}
+.readme {
+  width: 50%;
+  padding: 5px;
+  background: linear-gradient(
+    to top,
+    #333 10%,
+    rgb(197, 199, 122) 20%,
+    #ff0 35%,
+    #333 100%
+  );
+  border: 1px solid black;
+  box-shadow: 0 0 1.2px 0.6px red;
+  color: red;
+  margin: auto;
+  text-align: center;
+  border-radius: 5px;
 }
 .profile-card {
   max-width: 640px;

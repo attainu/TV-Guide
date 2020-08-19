@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PopularShows from "../components/PopularShows";
 import './../css/ShowSlider.css'
 import '@fortawesome/fontawesome-free/css/all.css'
@@ -11,12 +11,12 @@ const ShowSlider = (...props) => {
   return (
     <PopularShows
       render={({
-        results}
-      ) => 
+        results }
+      ) =>
         <>
-		<Carousel slides={results.slice(0,6)} />
-		
-		</>
+          <Carousel slides={results.slice(0, 6)} />
+
+        </>
       }
     />
   );
@@ -33,7 +33,7 @@ class CarouselLeftArrow extends Component {
         className="carousel__arrow carousel__arrow--left"
         onClick={this.props.onClick}
       >
-        <span className="fa fa-2x fa-angle-left" style={{color:"white",mixBlendMode:"difference"}}/>
+        <span className="fa fa-2x fa-angle-left" style={{ color: "white", mixBlendMode: "difference" }} />
 
       </div>
     );
@@ -48,7 +48,7 @@ class CarouselRightArrow extends Component {
         className="carousel__arrow carousel__arrow--right"
         onClick={this.props.onClick}
       >
-        <span className="fa fa-2x fa-angle-right" style={{color:"white",mixBlendMode:"difference"}}/>
+        <span className="fa fa-2x fa-angle-right" style={{ color: "white", mixBlendMode: "difference" }} />
       </div>
     );
   }
@@ -83,20 +83,20 @@ class CarouselSlide extends Component {
             : "carousel__slide"
         }
       >
-		  <div className="carousel__slide--backdrop" style={{backgroundImage:`url(https://image.tmdb.org/t/p/original${this.props.slide.backdrop_path})`}}>
-      <div className="carousel__slide--details">
-        <div className="carousel__slide--poster_path" style={{backgroundImage:`url(https://image.tmdb.org/t/p/original${this.props.slide.poster_path})`}}>
+        <div className="carousel__slide--backdrop" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${this.props.slide.backdrop_path})` }}>
+          <div className="carousel__slide--details">
+            <div className="carousel__slide--poster_path" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${this.props.slide.poster_path})` }}>
 
-      </div>
-      </div>
-      <div className="carousel__slide--details">
-        <div className="carousel_slide--original_name">
-          <h3 style={{textAlign:"left"}}>{this.props.slide.original_name}</h3>
-          <p>{sliceText(this.props.slide.overview, 150)}</p>
+            </div>
           </div>
+          <div className="carousel__slide--details">
+            <div className="carousel_slide--original_name">
+              <h3 style={{ textAlign: "left" }}>{this.props.slide.original_name}</h3>
+              <p>{sliceText(this.props.slide.overview, 150)}</p>
+            </div>
 
+          </div>
         </div>
-      </div>
       </li>
     );
   }
@@ -160,35 +160,35 @@ class Carousel extends Component {
 
   render() {
     return (
-		<div className="carousel">
-		<div className="carousel-container">
-			
-        <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
+      <div className="carousel">
+        <div className="carousel-container">
 
-        <ul className="carousel__slides">
-          {this.props.slides.map((slide, index) =>
-            <CarouselSlide
-              key={index}
-              index={index}
-              activeIndex={this.state.activeIndex}
-              slide={slide}
-            />
-          )}
-        </ul>
+          <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
 
-        <CarouselRightArrow onClick={e => this.goToNextSlide(e)} />
+          <ul className="carousel__slides">
+            {this.props.slides.map((slide, index) =>
+              <CarouselSlide
+                key={index}
+                index={index}
+                activeIndex={this.state.activeIndex}
+                slide={slide}
+              />
+            )}
+          </ul>
 
-        <ul className="carousel__indicators">
-          {this.props.slides.map((slide, index) =>
-            <CarouselIndicator
-              key={index}
-              index={index}
-              activeIndex={this.state.activeIndex}
-              onClick={e => this.goToSlide(index)}
-            />
-          )}
-        </ul>
-		</div>
+          <CarouselRightArrow onClick={e => this.goToNextSlide(e)} />
+
+          <ul className="carousel__indicators">
+            {this.props.slides.map((slide, index) =>
+              <CarouselIndicator
+                key={index}
+                index={index}
+                activeIndex={this.state.activeIndex}
+                onClick={e => this.goToSlide(index)}
+              />
+            )}
+          </ul>
+        </div>
       </div>
     );
   }

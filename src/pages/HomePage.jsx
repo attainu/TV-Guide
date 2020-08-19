@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ShowSlider from '../components/ShowSlider'
 import LatestHome from '../components/LatestHome'
+import PopularHome from '../components/PopularHome'
 
 export class HomePage extends Component {
     render() {
@@ -9,6 +10,7 @@ export class HomePage extends Component {
             <>
             <ShowSlider />
             <LatestHome num={4} />
+            <PopularHome num={4} />
             </>
         )
     }

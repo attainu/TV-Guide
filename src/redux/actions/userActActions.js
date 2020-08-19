@@ -10,23 +10,21 @@ export const addToWatchList = (item) => async (dispatch) => {
 }
 export const addToSubscribeList = (item) => async (dispatch) => {
 
-    const res = await db.collection("watchlist").add(item)
+    const res = await db.collection("subscribelist").add(item)
     dispatch({
         type: ADD_TO_SUBSCRIBELIST, payload: res
     })
 }
 export const viewSubscribeList = (userId) => async (dispatch) => {
-    const res = await db.collection("subscribelist").where("uid", "==", userId)
-        .onSnapshot(function (querySnapshot) {
-            var subscribelist = [];
-            querySnapshot.forEach(function (doc) {
-                subscribelist.push(doc.data().name);
-            });
-            //console.log("Current subscribelist in CA: ", subscribelist.join(", "));
-            return subscribelist;
-        });
+    var arr1 = []
+    db.collection("subscribelist").where("uid", "==", userId).get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) =>
+            arr1.push(doc.data())
+        );
+      console.log(arr1)
     dispatch({
-        type: VIEW_SUBSCRIBELIST, payload: res
+        type: VIEW_SUBSCRIBELIST, payload: arr1
+    })
     })
 }
 export const viewAddList = (userId) => (dispatch) => {
