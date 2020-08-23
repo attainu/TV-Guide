@@ -1,0 +1,68 @@
+@import "https://use.fontawesome.com/releases/v5.10.0/css/all.css";
+body {
+  margin: 0;
+  box-sizing: content-box;
+}
+footer.footer {
+  max-width: 100%;
+  height: auto;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-content {
+  flex: 1 0 250px;
+  background: #fff1;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 3px;
+}
+.footer-content p {
+  text-align: right;
+  color: white;
+}
+.footer-content ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.footer-content ul li i {
+  margin: auto 10px;
+}
+.footer-content ul li a {
+  text-decoration: none;
+  color: white;
+}
+.footer-copyright {
+  max-width: 100%;
+  padding: 30px;
+  background: #0007;
+}
+@media (max-width: 576px) {
+  .footer-content ul li {
+    display: inline-block;
+    margin: auto 20px;
+  }
+  .footer-content ul li i {
+    display: none;
+  }
+  .footer-copyright {
+    text-align: center;
+  }
+}
+@media (min-width: 577px) {
+  .footer-content ul li {
+    margin: 20px 0;
+  }
+  .footer-copyright {
+    text-align: right;
+  }
+}
+.footer-content h4 {
+  padding-left: 10px;
+  color: yellow;
+}
