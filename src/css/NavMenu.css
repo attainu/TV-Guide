@@ -1,0 +1,43 @@
+.navbar {
+  background: black !important;
+}
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("./hamburger.svg") !important;
+}
+.navbar-dark .navbar-toggler {
+  border-color: #00000000;
+}
+.nav-item a {
+  color: yellow !important;
+}
+.nav-item a.selected {
+  color: red !important;
+  text-shadow: 1px 1px yellow;
+}
+.dropdown {
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: linear-gradient(to top, #333, #333 50%, gray 60%, #333 75%);
+  font-size: 12px;
+  margin-top: 0rem !important;
+}
+.dropdown-toggle.nav-link {
+  padding-top: 0rem !important;
+}
+.dropdown .dropdown-menu {
+  background: black;
+}
+.dropdown .dropdown-menu .dropdown-item:hover {
+  background: yellow;
+  color: black;
+}
+.dropdown .dropdown-menu .dropdown-item:hover a,
+.dropdown .dropdown-menu .dropdown-item:hover span {
+  color: black !important;
+}
+@media (min-width: 320px) {
+  .nav-item {
+    margin: 10px;
+  }
+}

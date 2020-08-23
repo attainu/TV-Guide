@@ -1,0 +1,258 @@
+.cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid rgba(255, 0, 0, 0.258);
+  background-color: rgba(0, 0, 0, 0.707);
+  padding: 50px 0;
+  margin: 50px 0;
+  border-radius: 5px;
+}
+.card {
+  flex-basis: 250px;
+  margin: 15px 0;
+  height: 333px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 3px 2px yellow;
+}
+.overlay {
+  height: 0px;
+  width: 250px;
+  background-color: #ffff0070;
+  z-index: 2;
+  overflow: hidden;
+  transition: height 1s;
+  display: flex;
+  flex-direction: row;
+}
+.card:hover .overlay {
+  height: 55px;
+}
+.card form {
+  width: 50%;
+}
+form .overlay-butt {
+  background: linear-gradient(
+    to top,
+    #000 50%,
+    #000 75%,
+    #ff000040 75%,
+    #000 100%
+  );
+  font-size: 12px;
+  color: yellow;
+  margin: 0px;
+}
+form .overlay-butt span {
+  height: 100%;
+  color: red;
+}
+form .overlay-butt {
+  display: inline-block;
+  border: none;
+  margin: 0;
+  width: 100%;
+  height: 80%;
+  line-height: 100%;
+  text-decoration: none;
+  background: #000;
+  color: #ff0;
+  vertical-align: middle;
+  padding: 10px;
+  font-family: sans-serif;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+form .overlay-butt:hover,
+form .overlay-butt:focus {
+  background: #0053ba;
+  cursor: "pointer";
+}
+
+form .overlay-butt:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+form .overlay-butt:active {
+  transform: scale(0.99);
+}
+
+.card--original_name {
+  color: black;
+  text-shadow: 1px 1px red;
+  font-weight: 700;
+  mix-blend-mode: multiply;
+  font-size: x-large;
+  background-color: yellow;
+  text-align: center;
+  width: 100%;
+}
+.readme {
+  width: 50%;
+  padding: 5px;
+  background: linear-gradient(
+    to top,
+    #333 10%,
+    rgb(197, 199, 122) 20%,
+    #ff0 35%,
+    #333 100%
+  );
+  cursor: pointer;
+  border: 1px solid black;
+  box-shadow: 0 0 1.2px 0.6px red;
+  color: red;
+  margin: auto;
+  text-align: center;
+  border-radius: 5px;
+}
+.profile-card {
+  max-width: 640px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 320px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 20vh auto;
+  background-color: black;
+  box-shadow: 0 0 5px 5px black;
+}
+.profile-card-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: yellow;
+}
+.profile-card-box--pic {
+  width: 10vh;
+  height: 10vh;
+  margin: 10vh;
+  box-shadow: 0 0 5px 5px yellow;
+  border: 1px solid red;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+.profile-card-box--name {
+  text-align: center;
+  width: 100%;
+  font-size: 24px;
+}
+.profile-card-box--email {
+  text-align: center;
+  width: 100%;
+}
+.subwatch-cards {
+  margin: 0px auto 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  background-color: #000;
+  box-shadow: 0 0 5px 4px black;
+  height: auto;
+  min-height: 50vh;
+}
+.subwatch-card {
+  margin: 5px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: yellow;
+  text-shadow: 0 0 5px 4px red;
+  box-shadow: 0 0 3px 2px #ffff0050;
+}
+.subwatch-card .delete-butt {
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #ff0;
+  border: 1px solid red;
+  color: red;
+  border-radius: 5px;
+}
+.subwatch-card--poster_path {
+  margin: 0 10px;
+  height: 160px;
+  width: 120px;
+  background-position: center;
+  background-size: cover;
+}
+.subwatch-card--original_name {
+  margin: auto 10px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  width: calc(100% - 120px);
+  background-position: center;
+  background-size: cover;
+}
+@media (max-width: 576px) {
+  .subwatch-cards {
+    width: 100%;
+  }
+  .subwatch-card--videos {
+    width: 100%;
+    height: 220px;
+    margin: auto;
+  }
+}
+@media (min-width: 577px) {
+  .subwatch-cards {
+    width: 80%;
+  }
+  .subwatch-card--videos {
+    width: 80%;
+    height: 300px;
+    margin: auto;
+  }
+}
+
+.pagination {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 10px auto;
+  background-color: #0008;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 0, 0, 0.292);
+}
+.page {
+  color: yellow;
+  background-color: #0007;
+  border: 1px solid rgba(255, 0, 0, 0.244);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  cursor: pointer;
+}
+.page span {
+  line-height: 35px;
+}
+.page.active {
+  color: red;
+  background-color: yellow;
+}
